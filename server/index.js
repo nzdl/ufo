@@ -6,4 +6,5 @@ app.get('/', (req, res) => {
   res.send('hi')
 })
 
-app.listen(3000, error => console.log(error || 'Listening...'))
+const port = process.env.PORT || 3000
+app.listen(port, error => console.log(error || `Listening on ${port}...`))
