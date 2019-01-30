@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server/index",
     "test": "jest"
   },
   "keywords": [],
@@ -11,5 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^24.0.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
   }
 }
