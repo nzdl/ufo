@@ -13,6 +13,7 @@ npm start
 
 ## References
 ### Common
+* [Parcel](https://parceljs.org/)
 * [Jest](https://jestjs.io/)
 * [TypeScript](https://www.typescriptlang.org/)
 ### Back end
@@ -24,6 +25,7 @@ npm start
 ### Front end
 * [React](https://reactjs.org/)
 * [React-router](https://reacttraining.com/react-router/)
+* [Styled-components](https://www.styled-components.com/)
 * [Axios](https://github.com/axios/axios)
 * [Mobx](https://github.com/mobxjs/mobx)
 * [Enzyme](https://airbnb.io/enzyme/)
