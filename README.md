@@ -1,4 +1,4 @@
-# UFO
+# [UFO](https://nzdlufo.herokuapp.com/)
 [![Build Status](https://travis-ci.org/nzdl/ufo.svg?branch=master)](https://travis-ci.org/nzdl/ufo)
 
 ## Installation
