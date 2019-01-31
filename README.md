@@ -30,5 +30,5 @@ npm start
 * [Mobx](https://github.com/mobxjs/mobx)
 * [Enzyme](https://airbnb.io/enzyme/)
 ### Deployment
-[Heroku Node.js deployment](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-[Travis CI](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)
+* [Heroku Node.js deployment](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+* [Travis CI](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)
