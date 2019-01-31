@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
-  res.send('hi traivs & heroku')
+  res.send('hi typescript')
 })
 
 const port = process.env.PORT || 3000

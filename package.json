@@ -5,15 +5,24 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/index",
+    "prod": "npm run build && node dist/server/index",
+    "build": "tsc",
     "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^24.0.0"
+    "@types/jest": "^23.3.13",
+    "jest": "^24.0.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.4"
   },
   "dependencies": {
+    "@types/node": "^10.12.20",
     "express": "^4.16.4"
+  },
+  "jest": {
+    "preset": "ts-jest"
   }
 }
