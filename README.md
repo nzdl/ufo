@@ -29,3 +29,6 @@ npm start
 * [Axios](https://github.com/axios/axios)
 * [Mobx](https://github.com/mobxjs/mobx)
 * [Enzyme](https://airbnb.io/enzyme/)
+### Deployment
+[Heroku Node.js deployment](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+[Travis CI](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/)
