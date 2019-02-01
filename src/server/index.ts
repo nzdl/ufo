@@ -2,6 +2,10 @@ import express from 'express'
 import Bundler from 'parcel-bundler'
 import path from 'path'
 
+process.on('uncaughtException', error => {
+  console.log(`UncaughtException: ${error}`)
+})
+
 const app = express()
 
 app.get('/hi', (req, res) => {
