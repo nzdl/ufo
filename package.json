@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/index",
-    "prod": "npm run build && node dist/server/index",
+    "postinstall": "npm run build",
+    "prod": "node dist/server/index",
     "build": "tsc",
     "test": "jest"
   },
