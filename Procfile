@@ -1,1 +1,1 @@
-web: node dist/server/index
+web: NODE_ENV=production node dist/server/index
