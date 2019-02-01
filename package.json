@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index",
+    "start": "ts-node-dev src/server/index",
     "postinstall": "npm run build",
     "prod": "node dist/server/index",
     "build": "tsc",
@@ -17,6 +17,7 @@
     "@types/jest": "^23.3.13",
     "jest": "^24.0.0",
     "ts-jest": "^23.10.5",
+    "ts-node-dev": "^1.0.0-pre.32",
     "typescript": "^3.2.4"
   },
   "dependencies": {
