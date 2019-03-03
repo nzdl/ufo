@@ -8,7 +8,7 @@
     "postinstall": "NODE_ENV=production npm run build",
     "prod": "NODE_ENV=production node dist/server/index",
     "build": "rm -rf dist && tsc && parcel build --out-dir dist/public src/client/index.html",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest -u"
   },
   "keywords": [],
   "author": "",
