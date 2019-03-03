@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FoodApp 1`] = `
+<Provider
+  foodStore={
+    FoodStore {
+      "foods": Array [],
+    }
+  }
+>
+  <inject-FoodApp-with-foodStore>
+    <FoodApp
+      foodStore={
+        FoodStore {
+          "foods": Array [],
+        }
+      }
+    >
+      <Foods
+        foods={Array []}
+      >
+        <ul />
+      </Foods>
+      <inject-AddFood-with-foodStore>
+        <AddFood
+          foodStore={
+            FoodStore {
+              "foods": Array [],
+            }
+          }
+        >
+          <input
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <button
+            onClick={[Function]}
+          >
+            Add
+          </button>
+        </AddFood>
+      </inject-AddFood-with-foodStore>
+    </FoodApp>
+  </inject-FoodApp-with-foodStore>
+</Provider>
+`;
+
+exports[`FoodApp 2`] = `
+<Provider
+  foodStore={
+    FoodStore {
+      "foods": Array [
+        Object {
+          "name": "hamburger",
+        },
+      ],
+    }
+  }
+>
+  <inject-FoodApp-with-foodStore>
+    <FoodApp
+      foodStore={
+        FoodStore {
+          "foods": Array [
+            Object {
+              "name": "hamburger",
+            },
+          ],
+        }
+      }
+    >
+      <Foods
+        foods={Array []}
+      >
+        <ul />
+      </Foods>
+      <inject-AddFood-with-foodStore>
+        <AddFood
+          foodStore={
+            FoodStore {
+              "foods": Array [
+                Object {
+                  "name": "hamburger",
+                },
+              ],
+            }
+          }
+        >
+          <input
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <button
+            onClick={[Function]}
+          >
+            Add
+          </button>
+        </AddFood>
+      </inject-AddFood-with-foodStore>
+    </FoodApp>
+  </inject-FoodApp-with-foodStore>
+</Provider>
+`;
+
+exports[`FoodApp 3`] = `
+<Provider
+  foodStore={
+    FoodStore {
+      "foods": Array [
+        Object {
+          "name": "hamburger",
+        },
+        Object {
+          "name": "french fries",
+        },
+      ],
+    }
+  }
+>
+  <inject-FoodApp-with-foodStore>
+    <FoodApp
+      foodStore={
+        FoodStore {
+          "foods": Array [
+            Object {
+              "name": "hamburger",
+            },
+            Object {
+              "name": "french fries",
+            },
+          ],
+        }
+      }
+    >
+      <Foods
+        foods={
+          Array [
+            Object {
+              "name": "hamburger",
+            },
+          ]
+        }
+      >
+        <ul>
+          <Food
+            key="hamburger"
+            name="hamburger"
+          >
+            <li>
+              hamburger
+            </li>
+          </Food>
+        </ul>
+      </Foods>
+      <inject-AddFood-with-foodStore>
+        <AddFood
+          foodStore={
+            FoodStore {
+              "foods": Array [
+                Object {
+                  "name": "hamburger",
+                },
+                Object {
+                  "name": "french fries",
+                },
+              ],
+            }
+          }
+        >
+          <input
+            onChange={[Function]}
+            type="text"
+            value="french fries"
+          />
+          <button
+            onClick={[Function]}
+          >
+            Add
+          </button>
+        </AddFood>
+      </inject-AddFood-with-foodStore>
+    </FoodApp>
+  </inject-FoodApp-with-foodStore>
+</Provider>
+`;
