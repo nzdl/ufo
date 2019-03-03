@@ -43,7 +43,7 @@
     "routing-controllers": "^0.7.7"
   },
   "jest": {
-    "setupFilesAfterEnv": ["./src/client/setupTests"],
+    "setupFilesAfterEnv": ["./src/client/setupTests.ts"],
     "testEnvironment": "enzyme",
     "preset": "ts-jest"
   }
