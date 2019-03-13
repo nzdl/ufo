@@ -1,26 +1,49 @@
 import * as React from "react";
 import { observable, computed } from 'mobx'
 import { inject, observer } from 'mobx-react'
+import axios from 'axios'
 
-@observer
-export class UserApp extends React.Component<any> {
+
+class UserStore {
+
     @observable users = ["leiwang", "runlei"]
     @observable userName = ""
+
     @computed
     get userLength(){ return this.users.length}
 
-    render() {
-        window["users"] = this
-        return <div>
-            <ul>
-                {this.users.map(user => <li key={user}>{user}</li>)}
-
-            </ul>
-            <p>Length: {this.userLength}</p>
-
-            <input onChange={e => this.userName = e.target.value}/>
-            <button onClick={e => this.users.push(this.userName)}>Add</button>
-        </div>
+    onChange = userName => userstore.userName = userName
+    submit = () => {
+         userstore.users.push(userstore.userName);
+         this.userName = ""
     }
+
+    fetchUser = async () => {
+        const response = await axios.get('/users')
+        this.users = response.data
+    }
+
+
+ }
+
+const userstore = new UserStore()
+
+function User({userName}) {
+    return <li>{userName}</li>
 }
 
+export let UserApp = () =>
+
+        <div>
+            <ul>
+                {userstore.users.map((userName) => <User key={userName} userName={userName} />)}
+
+            </ul>
+            <p>Length: {userstore.userLength}</p>
+
+            <input onChange={e => userstore.onChange(e.target.value)} value={userstore.userName}/>
+            <button onClick={userstore.submit}>Add</button>
+        </div>
+
+
+UserApp = observer(UserApp)
