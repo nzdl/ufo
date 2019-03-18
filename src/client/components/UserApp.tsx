@@ -21,6 +21,7 @@ class UserStore {
     fetchUser = async () => {
         const response = await axios.get('/users')
         this.users = response.data
+
     }
 
 

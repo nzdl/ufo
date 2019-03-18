@@ -4,12 +4,13 @@ import Bundler from 'parcel-bundler'
 import path from 'path'
 import { createExpressServer } from 'routing-controllers'
 import { FoodController } from './controllers/FoodController'
+import { UserController } from './controllers/UserController'
 import { IndexController } from './controllers/IndexController'
 import { JsonMiddleware } from './middlewares/JsonMiddleware'
 
 export function createServer() {
   const app = createExpressServer({
-    controllers: [IndexController, FoodController],
+    controllers: [IndexController, FoodController, UserController],
     middlewares: [JsonMiddleware]
   })
 
