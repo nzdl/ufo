@@ -20,6 +20,14 @@ export class BoardStore {
       ])
   ];
 
+  Add = () => {
+      this.lists.push(new List([
+          new Card("title7"),
+          new Card("title8"),
+          new Card("title9"),
+      ]))
+  }
+
 }
 
 
@@ -30,15 +38,25 @@ export class List {
     this.cards = cards
   }
 
-  AddCard(){
-      this.cards.push(new Card('new'))
-      alert('CARDS')
-    }
+  Add = (card) => {
+      card.list = this
+      this.cards.push(card)
+  }
+
+  Delete = (card) => {
+      this.cards = this.cards.filter((c) => c !== card)
+  }
 }
 
 export class Card {
   title: string;
   constructor(title){
     this.title = title
+  }
+
+  list: List
+
+  Delete = () => {
+      this.list.Delete(this)
   }
 }
