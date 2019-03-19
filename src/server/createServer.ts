@@ -5,12 +5,13 @@ import path from 'path'
 import { createExpressServer } from 'routing-controllers'
 import { FoodController } from './controllers/FoodController'
 import { UserController } from './controllers/UserController'
+import { BoardController } from './controllers/BoardController'
 import { IndexController } from './controllers/IndexController'
 import { JsonMiddleware } from './middlewares/JsonMiddleware'
 
 export function createServer() {
   const app = createExpressServer({
-    controllers: [IndexController, FoodController, UserController],
+    controllers: [IndexController, FoodController, UserController, BoardController],
     middlewares: [JsonMiddleware]
   })
 
