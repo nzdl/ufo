@@ -5,15 +5,6 @@ import axios from 'axios'
 import {BoardStore, Card, List} from "../stores/BoardStore";
 import {resolveAny} from "dns";
 
-
-let boardStyle = {
-    display : "flex",
-}
-
-let listStyle = {
-    border: "1px solid black"
-}
-
 let handleClick = (parent, child) => {
     parent.Add(child);
 }
@@ -22,7 +13,7 @@ let handleClick = (parent, child) => {
 class CardView extends React.Component<Card> {
     render() {
         return (
-            <div>
+            <div style={cardStyle}>
                 <span>{this.props.title}</span>
                 <button onClick = {this.props.Delete}>X</button>
             </div>
@@ -43,16 +34,8 @@ class ListView extends React.Component<List> {
                         {this.props.cards.map((card) => <CardView {...card}/>)}
                     </div>
                     <div style={boardStyle}>
-                        <input type="text" onChange={
-                            e => {
-                                console.log(e.target.value);
-                                this.cardName = e.target.value
-                        }}
-                               value={this.cardName}/>
-                        <button onClick={() => {
-                            handleClick(this.props, new Card(this.cardName));
-                            this.cardName = ''
-                        }}>
+                        <input type = "text" onChange = {e => {this.cardName = e.target.value}} value = {this.cardName}/>
+                        <button onClick = {() => {handleClick(this.props, new Card(this.cardName)); this.cardName = ''}}>
                             Add Card
                         </button>
                     </div>
@@ -81,11 +64,26 @@ export class BoardApp extends React.Component {
             <div style={boardStyle}>
                 {boardStore.lists.map((list: List) => <ListView {...list} />)}
                 <div style={listStyle}>
-                    <input type="text" onChange = {e => new Card(e.target.value)} />
-                    <button onClick = {() => {}} >Add List</button>
+                    <button onClick = {boardStore.Add} >Add List</button>
                 </div>
             </div>
         )
     }
+}
+
+const boardStyle = {
+    padding: 10,
+    display: 'flex',
+    border: '1px solid lightgray'
+}
+
+const listStyle = {
+    margin: 10,
+    padding: 14,
+    border: '1px solid lightgray'
+}
+
+const cardStyle = {
+    margin: '10px 0',
 }
 
