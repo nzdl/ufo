@@ -76,12 +76,9 @@ export class Card {
       this.list = list
   }
 
-
-  deleteCard = (card) => {
-      this.list.listDeleteCard(card)
+  deleteCard = () => {
+      this.list.listDeleteCard(this)
   }
-
-  
 }
 
 export const boardStore = new BoardStore()

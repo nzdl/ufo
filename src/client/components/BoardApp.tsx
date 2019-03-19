@@ -41,9 +41,6 @@ export let BoardApp = observer (() => {
 export let CardView = observer((card) => {
     return <div>
         <span>{card.title}</span>
-        <button onClick={card.deleteCard(card)}>x</button>
+        <button onClick={e => card.deleteCard()}>x</button>
     </div>
-
-
-
 })
