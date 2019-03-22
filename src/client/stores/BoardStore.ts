@@ -3,20 +3,54 @@ import { observable } from "mobx"
 export class BoardStore {
   @observable cards = []
   @observable lists = []
+  @observable boards = []
 
-  addList = () => {
-    let list = new List("list1", [])
-    this.lists.push(list)
+  // addList = () => {
+  //   let list = new List("list1", [], this)
+  //   this.lists.push(list)
+  // }
+
+  addBoard = () => {
+    let board = new Board("board1",[],[])
+      this.boards.push(board)
+  }
+
+  deleteBoard = () => {
+
   }
 }
+
+export class Board {
+  @observable boardName: string
+  @observable lists: List[]
+  @observable card: Card[]
+
+    constructor(boardName, lists, cards) {
+        this.boardName = boardName
+        this.lists = lists
+        this.card = cards
+    }
+
+    addList = () => {
+        let list = new List("listname", [], this)
+        this.lists.push(list)
+    }
+
+    boardDeleteList = () => {
+
+  }
+}
+
 
 export class List {
   @observable cards: Card[]
   @observable listName: string
   @observable titleInput = ""
+  @observable board:Board[]
 
-  constructor(listName, cards) {
-    this.cards = cards
+  constructor(listName, cards, board) {
+      this.cards = cards
+      this.board = board
   }
 
   changeTitleInput = (title) => {

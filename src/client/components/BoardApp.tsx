@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react'
 import * as React from 'react'
-import { boardStore, Card, List } from '../stores/BoardStore'
+import { boardStore, Card, List, Board } from '../stores/BoardStore'
 
 export const ListView = observer((list: List) => {
   return <div style={listStyle}>
@@ -12,13 +12,25 @@ export const ListView = observer((list: List) => {
   </div>
 })
 
-export const BoardApp = observer(() => {
-  return <div style={boardStyle}>
-    {boardStore.lists.map((list: List) => <ListView {...list} />)}
-
-    <div style={listStyle}>
-      <button onClick={boardStore.addList}>Add List</button>
+export const BoardView = observer((board: Board) => {
+    return <div>
+        <div style={boardStyle}>
+        {board.lists.map((list: List) => <ListView {...list} />)}
+            <div style={listStyle}><button onClick={board.addList}>Add List</button></div>
+        </div>
+        {/*<div><button>Delete Board</button></div>*/}
     </div>
+})
+
+
+export const BoardApp = observer(() => {
+  return <div style={containerStyle}>
+      <div>
+          {boardStore.boards.map((board:Board) => <BoardView {...board}/>)}
+      </div>
+      <div>
+          <button onClick={boardStore.addBoard}>Add Board</button>
+      </div>
   </div>
 })
 
@@ -44,4 +56,8 @@ const listStyle = {
 
 const cardStyle = {
   margin: '10px 0',
+}
+
+const containerStyle = {
+    margin: '10px 0',
 }
