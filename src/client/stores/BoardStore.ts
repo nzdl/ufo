@@ -48,7 +48,8 @@ export class List {
     this.cards = cards
   }
 
-  Add = (card) => {
+  Add = () => {
+      let card = new Card([])
       card.list = this
       this.cards.push(card)
   }
