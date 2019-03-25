@@ -1,21 +1,26 @@
-import { Get, JsonController, Post, Req } from 'routing-controllers'
-import { Food } from '../model/Food'
-import {BoardStore, Board} from "../../client/stores/BoardStore";
+import {Delete, Get, JsonController, Post, Req} from 'routing-controllers'
+import { Board } from '../model/Board'
+// import {BoardStore, Board} from "../../client/stores/BoardStore";
 
-const boardStore = new BoardStore([])
+let boards =  []
 
 @JsonController('/boards')
 export class BoardController {
 
     @Get('/')
     index() {
-        return boardStore.boards
+        return boards
     }
 
     @Post('/')
-    create(@Req() request) {
-        boardStore.Add();
+    createBoard(@Req() request) {
+        // boardStore.Add();
         return []
     }
 
+    @Delete('/')
+    deleteBoard(@Req() request) {
+        // boardStore.Add();
+        return []
+    }
 }
