@@ -2,7 +2,7 @@ import * as React from "react";
 import { observable, computed } from 'mobx'
 import { inject, observer } from 'mobx-react'
 import axios from 'axios'
-import {BoardStore, Card, List} from "../stores/BoardStore";
+import {BoardStore, Board, List, Card} from "../stores/BoardStore";
 import {resolveAny} from "dns";
 
 let handleClick = (parent, child) => {
@@ -45,26 +45,34 @@ class ListView extends React.Component<List> {
     }
 }
 
-
-let boardStore = new BoardStore();
-
-let createNewCard = (name) => {
-
+@observer
+class BoardView extends React.Component<Board> {
+                render(): React.ReactNode {
+                    return (
+                        <div style={boardStyle}>
+                            {this.props.lists.map((list: List) => <ListView {...list} />)}
+                            <div style={listStyle}>
+                                <button onClick = {this.props.Add} >Add List</button>
+                            </div>
+                        </div>
+                    )
+                }
 }
 
-let createNewList = (name) => {
-    new List(name)
-}
+
+
+
+
+let boardStore = new BoardStore([]);
 
 @observer
 export class BoardApp extends React.Component {
-    render() {
-
+    render() : React.ReactNode {
         return (
-            <div style={boardStyle}>
-                {boardStore.lists.map((list: List) => <ListView {...list} />)}
+            <div>
+                {boardStore.boards.map((board: Board) => <BoardView {...board} />)}
                 <div style={listStyle}>
-                    <button onClick = {boardStore.Add} >Add List</button>
+                    <button onClick = {boardStore.Add} >Add Board</button>
                 </div>
             </div>
         )
