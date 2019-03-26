@@ -5,5 +5,10 @@ export class List {
     id;
     boardId;
     title: string;
-    cards: Card[];_
+
+    constructor (id, boardId, title) {
+        this.id = id;
+        this.boardId = boardId;
+        this.title = title
+    }
 }

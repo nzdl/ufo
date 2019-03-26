@@ -5,5 +5,9 @@ export class Board {
     id;
     userId;
     title: string;
-    lists: List[];
+
+    constructor (id, title) {
+        this.id = id;
+        this.title = title
+    }
 }

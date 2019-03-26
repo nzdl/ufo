@@ -4,4 +4,10 @@ export class Card {
     id;
     listId;
     title: string;
+
+    constructor (id, listId, title) {
+        this.id = id;
+        this.listId = listId;
+        this.title = title
+    }
 }
