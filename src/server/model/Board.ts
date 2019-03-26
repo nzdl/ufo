@@ -6,18 +6,4 @@ export class Board {
     userId;
     title: string;
     lists: List[];
-
-    constructor(lists){
-        this.lists = lists;
-    }
-
-    Add = () => {
-        let list = new List([]);
-        list.boardId = this.id;
-        this.lists.push(list)
-    }
-
-    Delete = (listId) => {
-        this.lists = this.lists.filter((c) => c.id !== listId)
-    }
 }

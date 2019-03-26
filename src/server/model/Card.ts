@@ -4,8 +4,4 @@ export class Card {
     id;
     listId;
     title: string;
-
-    Delete = () => {
-        this.listId.DeleteCard(this.id)
-    }
 }
