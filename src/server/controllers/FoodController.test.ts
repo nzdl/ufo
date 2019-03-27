@@ -1,12 +1,24 @@
 import axiosist from 'axiosist'
-import { createServer } from '../createServer'
+import { Connection } from 'typeorm'
+import { connectToDatabase, createServer } from '../createServer'
 import { AxiosInstance } from 'axios'
 
 let axios: AxiosInstance
+let connection: Connection
 
-beforeAll(() => {
+beforeAll(async () => {
+  connection = await connectToDatabase()
   const server = createServer()
   axios = axiosist(server)
+})
+
+beforeEach(async () => {
+  await connection.dropDatabase()
+  await connection.synchronize()
+})
+
+afterAll(async () => {
+  await connection.close()
 })
 
 test('create and list foods', async () => {
