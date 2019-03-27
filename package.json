@@ -22,7 +22,7 @@
     "@types/react-dom": "^16.8.2",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
-    "jest": "^24.0.0",
+    "jest": "^23.6.0",
     "jest-environment-enzyme": "^7.0.1",
     "jest-enzyme": "^7.0.1",
     "nodemon": "^1.18.10",
@@ -42,7 +42,10 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "reflect-metadata": "^0.1.13",
-    "routing-controllers": "^0.7.7"
+    "routing-controllers": "^0.7.7",
+    "typedi": "^0.8.0",
+    "typeorm": "^0.2.16",
+    "typeorm-typedi-extensions": "^0.2.3"
   },
   "jest": {
     "setupFilesAfterEnv": [
